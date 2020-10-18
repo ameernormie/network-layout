@@ -1,0 +1,12 @@
+@import "../../styles/common.scss";
+@import "../../styles/colors.scss";
+
+.home-container {
+    @extend .main-container;
+
+    .home-content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        color: $secondary-text-color;
+    }
+}

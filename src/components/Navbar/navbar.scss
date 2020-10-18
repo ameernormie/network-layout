@@ -1,0 +1,37 @@
+@import "../../styles/common.scss";
+@import "../../styles/colors.scss";
+
+.navbar-container {
+  .MuiTabs-indicator {
+    display: none;
+  }
+
+  .MuiTabs-scroller {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+  }
+
+  .MuiTab-root {
+    border-radius: 8px;
+    min-width: 90px;
+    min-height: 24px;
+    padding: 10px 15px;
+    margin: 15px 10px;
+    transition: all 200ms linear;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    &.Mui-selected {
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+
+    .MuiTab-wrapper {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}
