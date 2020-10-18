@@ -1,0 +1,13 @@
+.custom-table-container {
+  .MuiTableCell-root {
+    font-size: 14px;
+  }
+  
+  .MuiTableBody-root {
+    .MuiTableRow-root {
+      &:nth-child(odd) {
+        background: #ececec;
+      }
+    }
+  }
+}

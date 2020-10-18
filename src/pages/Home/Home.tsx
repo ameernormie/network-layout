@@ -6,29 +6,10 @@ import "./home.scss";
 import Accordion from "@material-ui/core/Accordion/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails/AccordionDetails";
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: any;
-  value: any;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && <>{children}</>}
-    </div>
-  );
-}
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import CustomTable from "../../components/CustomTable/CustomTable";
+import TabsWithTable from "../../components/TabsWithTable/TabsWithTable";
+import { TabPanel } from "../../components/TabPanel/TabPanel";
 
 export default function Home() {
   const [value, setValue] = useState(0);
@@ -42,11 +23,13 @@ export default function Home() {
           <TabPanel value={value} index={0}>
             <img src="/images/bubble-visualization.png" />
           </TabPanel>
+
           <TabPanel value={value} index={1}>
-            Item Two
+            <img src="/images/map-sample.jpeg" />
           </TabPanel>
+
           <TabPanel value={value} index={2}>
-            Item Three
+            <TabsWithTable />
           </TabPanel>
         </div>
 
@@ -61,9 +44,13 @@ export default function Home() {
                 Accordion 1
               </AccordionSummary>
               <AccordionDetails>
-                  <img src="/images/barchart-sample.jpg" style={{width: "100%"}}/>
+                <img
+                  src="/images/barchart-sample.jpg"
+                  style={{ width: "100%" }}
+                />
               </AccordionDetails>
             </Accordion>
+
             <Accordion defaultExpanded>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
@@ -73,15 +60,46 @@ export default function Home() {
                 Accordion 1
               </AccordionSummary>
               <AccordionDetails>
-                  <img src="/images/barchart-sample.jpg" style={{width: "100%"}}/>
+                <img
+                  src="/images/barchart-sample.jpg"
+                  style={{ width: "100%" }}
+                />
               </AccordionDetails>
             </Accordion>
           </TabPanel>
           <TabPanel value={value} index={1}>
-            Item Two
+            <Accordion defaultExpanded>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                Accordion 1
+              </AccordionSummary>
+              <AccordionDetails>
+                <img
+                  src="/images/barchart-sample.jpg"
+                  style={{ width: "100%" }}
+                />
+              </AccordionDetails>
+            </Accordion>
           </TabPanel>
           <TabPanel value={value} index={2}>
-            Item Three
+            <Accordion defaultExpanded>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                Accordion 1
+              </AccordionSummary>
+              <AccordionDetails>
+                <img
+                  src="/images/barchart-sample.jpg"
+                  style={{ width: "100%" }}
+                />
+              </AccordionDetails>
+            </Accordion>
           </TabPanel>
         </div>
       </div>
